@@ -1,0 +1,8 @@
+{
+  "name": "Couples Weekly Budget Tracker",
+  "description": "Weekly and monthly couples budgeting app with solid earthy Art Nouveau design, dynamic weekly rollovers, parent & subcategory hierarchy, vector partner insignias, kitchen tablet optimization, and couple chat.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

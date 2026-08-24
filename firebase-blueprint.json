@@ -1,0 +1,76 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "User accounts and auth metadata",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "email": { "type": "string" },
+        "name": { "type": "string" },
+        "partnerId": { "type": "string" },
+        "householdId": { "type": "string" },
+        "passwordHash": { "type": "string" },
+        "createdAt": { "type": "number" }
+      },
+      "required": ["id", "email", "name", "partnerId", "householdId"]
+    },
+    "Household": {
+      "title": "Household",
+      "description": "Joint household budget configuration, partner profiles, and score history",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "inviteCode": { "type": "string" },
+        "createdAt": { "type": "number" },
+        "settings": { "type": "object" },
+        "subcategories": { "type": "array" },
+        "score": { "type": "object" },
+        "gambles": { "type": "array" }
+      },
+      "required": ["id", "name", "inviteCode", "settings", "subcategories"]
+    },
+    "Transaction": {
+      "title": "Transaction",
+      "description": "Joint and individual spending transactions with emojis and metadata",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "householdId": { "type": "string" },
+        "partnerId": { "type": "string" },
+        "partnerName": { "type": "string" },
+        "mainCategory": { "type": "string" },
+        "subcategoryId": { "type": "string" },
+        "subcategoryName": { "type": "string" },
+        "amount": { "type": "number" },
+        "date": { "type": "string" },
+        "note": { "type": "string" },
+        "spendingType": { "type": "string" },
+        "isFixedBaseAllocation": { "type": "boolean" },
+        "reactions": { "type": "object" },
+        "createdAt": { "type": "number" }
+      },
+      "required": ["id", "householdId", "partnerId", "mainCategory", "amount", "date"]
+    },
+    "ChatMessage": {
+      "title": "ChatMessage",
+      "description": "Couple messages, GIFs, emojis, and shared transaction discussion cards",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "householdId": { "type": "string" },
+        "partnerId": { "type": "string" },
+        "partnerName": { "type": "string" },
+        "partnerAvatar": { "type": "string" },
+        "content": { "type": "string" },
+        "gifUrl": { "type": "string" },
+        "gifTitle": { "type": "string" },
+        "attachedTransaction": { "type": "object" },
+        "reactions": { "type": "object" },
+        "createdAt": { "type": "number" }
+      },
+      "required": ["id", "householdId", "partnerId", "partnerName", "createdAt"]
+    }
+  }
+}
